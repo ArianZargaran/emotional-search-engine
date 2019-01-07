@@ -1,5 +1,5 @@
 describe('Body E2E', () => {
-  it('should assert that true is equal to true', () => {
-    expect(true).to.equal(true);
+  it('should be able to start the App and visit the site', () => {
+    cy.visit("/");
   });
 });
