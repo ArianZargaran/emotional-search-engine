@@ -1,0 +1,176 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders SearchResult correctly 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <searchResult>
+    Object {
+      "description": "Coordinates: 36°17′56.4″N 30°21′17.3″E﻿ / ﻿36.299000°N 30.354806°E﻿ / 36.299000; 30.354806 Gagae (Greek: Γάγαι), was a town on the southeast coast of Lycia, in what is now the province of Antalya, from which the Gagates lapis derived its name. The ruins are located in Kumluca district, Antalya Province, Turkey.",
+      "emotion": "😒 10% | 😃 50% | 😱 35% | 🙈 5% | 😡 0%",
+      "title": "This is a mosk query",
+      "url": "www.LoremIpsum.com",
+    }
+  </searchResult>,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <h1
+          className="search-result_title"
+        >
+          This is a mosk query
+        </h1>,
+        <a
+          className="search-result_url"
+          href="www.LoremIpsum.com"
+        >
+          www.LoremIpsum.com
+        </a>,
+        <p
+          className="search-result_description"
+        >
+          Coordinates: 36°17′56.4″N 30°21′17.3″E﻿ / ﻿36.299000°N 30.354806°E﻿ / 36.299000; 30.354806 Gagae (Greek: Γάγαι), was a town on the southeast coast of Lycia, in what is now the province of Antalya, from which the Gagates lapis derived its name. The ruins are located in Kumluca district, Antalya Province, Turkey.
+        </p>,
+      ],
+      "className": "search-result",
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "This is a mosk query",
+          "className": "search-result_title",
+        },
+        "ref": null,
+        "rendered": "This is a mosk query",
+        "type": "h1",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "www.LoremIpsum.com",
+          "className": "search-result_url",
+          "href": "www.LoremIpsum.com",
+        },
+        "ref": null,
+        "rendered": "www.LoremIpsum.com",
+        "type": "a",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": "Coordinates: 36°17′56.4″N 30°21′17.3″E﻿ / ﻿36.299000°N 30.354806°E﻿ / 36.299000; 30.354806 Gagae (Greek: Γάγαι), was a town on the southeast coast of Lycia, in what is now the province of Antalya, from which the Gagates lapis derived its name. The ruins are located in Kumluca district, Antalya Province, Turkey.",
+          "className": "search-result_description",
+        },
+        "ref": null,
+        "rendered": "Coordinates: 36°17′56.4″N 30°21′17.3″E﻿ / ﻿36.299000°N 30.354806°E﻿ / 36.299000; 30.354806 Gagae (Greek: Γάγαι), was a town on the southeast coast of Lycia, in what is now the province of Antalya, from which the Gagates lapis derived its name. The ruins are located in Kumluca district, Antalya Province, Turkey.",
+        "type": "p",
+      },
+    ],
+    "type": "li",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <h1
+            className="search-result_title"
+          >
+            This is a mosk query
+          </h1>,
+          <a
+            className="search-result_url"
+            href="www.LoremIpsum.com"
+          >
+            www.LoremIpsum.com
+          </a>,
+          <p
+            className="search-result_description"
+          >
+            Coordinates: 36°17′56.4″N 30°21′17.3″E﻿ / ﻿36.299000°N 30.354806°E﻿ / 36.299000; 30.354806 Gagae (Greek: Γάγαι), was a town on the southeast coast of Lycia, in what is now the province of Antalya, from which the Gagates lapis derived its name. The ruins are located in Kumluca district, Antalya Province, Turkey.
+          </p>,
+        ],
+        "className": "search-result",
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "This is a mosk query",
+            "className": "search-result_title",
+          },
+          "ref": null,
+          "rendered": "This is a mosk query",
+          "type": "h1",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "www.LoremIpsum.com",
+            "className": "search-result_url",
+            "href": "www.LoremIpsum.com",
+          },
+          "ref": null,
+          "rendered": "www.LoremIpsum.com",
+          "type": "a",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": "Coordinates: 36°17′56.4″N 30°21′17.3″E﻿ / ﻿36.299000°N 30.354806°E﻿ / 36.299000; 30.354806 Gagae (Greek: Γάγαι), was a town on the southeast coast of Lycia, in what is now the province of Antalya, from which the Gagates lapis derived its name. The ruins are located in Kumluca district, Antalya Province, Turkey.",
+            "className": "search-result_description",
+          },
+          "ref": null,
+          "rendered": "Coordinates: 36°17′56.4″N 30°21′17.3″E﻿ / ﻿36.299000°N 30.354806°E﻿ / 36.299000; 30.354806 Gagae (Greek: Γάγαι), was a town on the southeast coast of Lycia, in what is now the province of Antalya, from which the Gagates lapis derived its name. The ruins are located in Kumluca district, Antalya Province, Turkey.",
+          "type": "p",
+        },
+      ],
+      "type": "li",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+}
+`;

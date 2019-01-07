@@ -1,0 +1,6 @@
+{
+  "extends": ["jest-enzyme"],
+  "globals": {
+    "ShallowRenderer": true
+  }
+}

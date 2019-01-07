@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders MainHeader correctly 1`] = `
+<h1
+  className="ese-main-header"
+  onMouseOver={[Function]}
+>
+  Here goes a title
+</h1>
+`;

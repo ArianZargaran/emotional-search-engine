@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  font-family: 'Roboto', sans-serif; 
+}
+
+body a {
+  text-decoration: none;
+  color: #000; 
+}
+
+input[type="text"] {
+  font-size: 16px; }
+
+::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.2); }
+
+::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.2); }
+
+:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.2); }
+
+:-moz-placeholder {
+  color: rgba(0, 0, 0, 0.2); }

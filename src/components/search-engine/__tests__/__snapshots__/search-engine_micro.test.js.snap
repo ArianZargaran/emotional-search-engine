@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders SearchEngineMicro correctly 1`] = `
+<a
+  className="ese-search-engine_micro"
+  href="##"
+>
+  <div
+    className="ese-search-engine_micro_msg"
+  >
+    <div
+      className="ese-search-engine_micro_arrow"
+    />
+    <p
+      className="ese-search-engine_micro_txt"
+    >
+      Search 
+      <br />
+      by voice
+    </p>
+  </div>
+</a>
+`;

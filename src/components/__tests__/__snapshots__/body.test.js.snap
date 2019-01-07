@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Body correctly 1`] = `
+<div>
+  <MainHeader>
+    Emotional Search Engine
+  </MainHeader>
+  <searchEngine />
+  <Connect(ResultsSection) />
+</div>
+`;

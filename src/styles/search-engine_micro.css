@@ -1,0 +1,67 @@
+.ese-search-engine_micro {
+  width: 5%;
+  height: 100%;
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/e/e8/Google_mic.svg");
+  background-size: 18px 25.766355140186917px;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.ese-search-engine_micro:hover .ese-search-engine_micro_msg {
+  visibility: visible;
+}
+
+.ese-search-engine_micro_msg {
+  visibility: hidden;
+  position: relative;
+  padding: 5px 0;
+  top: 50px;
+  right: 27px;
+  width: 68px;
+  line-height: 15px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #fff;
+  -webkit-box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16),
+    0 0 0 1px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.16), 0 0 0 1px rgba(0, 0, 0, 0.08);
+}
+@media screen and (min-width: 695.01px) {
+  .ese-search-engine_micro-msg {
+    right: 46px;
+    padding: 7px 9px;
+    width: 100px;
+  }
+  .ese-search-engine_micro_msg br {
+    display: none;
+  }
+}
+@media screen and (min-width: 864.01px) {
+  .ese-search-engine_micro-msg {
+    right: 42.5px;
+  }
+}
+
+.ese-search-engine_micro_arrow {
+  bottom: 100%;
+  left: 50%;
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border: 1px solid #fff;
+  border-color: rgba(255, 255, 255, 0);
+  border-bottom-color: #000;
+  border-width: 6px;
+  margin-left: -6px;
+}
+.ese-search-engine_micro_txt {
+  font-family: arial, sans-serif;
+  font-size: 11px;
+  letter-spacing: -0.2px;
+  font-weight: 700;
+}
+@media screen and (min-width: 695.01px) {
+  .ese-search-engine_micro_txt {
+    font-size: 12px;
+  }
+}
