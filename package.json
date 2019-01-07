@@ -16,6 +16,7 @@
     "test:e2e": "cypress open",
     "test:e2e:run": "cypress run",
     "test:automation": "start-server-and-test start 3000 test:e2e",
+    "test:automation:run": "start-server-and-test start 3000 test:e2e:run",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
