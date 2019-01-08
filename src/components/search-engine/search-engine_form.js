@@ -34,7 +34,6 @@ class SearchForm extends React.Component {
         <input
           type="text"
           value={term}
-          t
           onChange={this.onInputChange}
           className="ese-search-engine_field"
           placeholder="Search..."

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "styles/search-result.css";
 
@@ -8,10 +9,22 @@ const searchResult = ({ children }) => {
       <h1 className="search-result_title">{children.title}</h1>
       <a href={children.url} className="search-result_url">{children.url}</a>
       <p className="search-result_description">{children.description}</p>
+      {/* <p className='search-result_emotion'>{children.emotion}</p> */}
     </li>
   );
 };
 
-export default searchResult;
+searchResult.defaultProps = {
+  children: {
+    title: "No title was found",
+    url: "This Site has no URL",
+    description: "No description available",
+    emotion: "No emotions detected"
+  }
+}
 
-// <p className='search-result_emotion'>{children.emotion}</p>
+searchResult.propTypes = {
+  children: PropTypes.object
+}
+
+export default searchResult;
