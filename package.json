@@ -13,6 +13,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "test:e2e": "cypress open",
+    "test:e2e:run": "cypress run",
+    "test:automation": "start-server-and-test start 3000 test:e2e",
+    "test:automation:run": "start-server-and-test start 3000 test:e2e:run",
+    "lint": "eslint --ext=js .",
+    "coveralls": "cat ./coverage/lcov.info | node node_modules/.bin/coveralls",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -25,8 +31,11 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "coveralls": "^3.0.2",
+    "cypress": "^3.1.4",
     "enzyme": "^3.8.0",
     "enzyme-adapter-react-16": "^1.7.1",
-    "eslint-config-jest-enzyme": "^7.0.1"
+    "eslint-config-jest-enzyme": "^7.0.1",
+    "start-server-and-test": "^1.7.11"
   }
 }
