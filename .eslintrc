@@ -1,5 +1,5 @@
 {
-  "extends": ["jest-enzyme"],
+  "extends": ["jest-enzyme", "react-app"],
   "globals": {
     "ShallowRenderer": true,
     "cy": true
