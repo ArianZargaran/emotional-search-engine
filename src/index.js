@@ -1,13 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import store from "./state/store";
+import AppProvider from "./context";
 
 import Body from "./components/body";
 
 ReactDOM.render(
-  <Provider store={store}>
+  <AppProvider>
     <Body />
-  </Provider>,
+  </AppProvider>,
   document.getElementById("root")
 );

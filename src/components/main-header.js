@@ -27,7 +27,7 @@ export default class MainHeader extends React.Component {
     return ( 
       <h1 
         className="ese-main-header"
-        onMouseOver= {this.changeHeaderColor}
+        onMouseOver={this.changeHeaderColor}
       >{children}</h1>
     );
   }
@@ -35,12 +35,13 @@ export default class MainHeader extends React.Component {
   changeHeaderColor(ev) {
     const headerEl = ev.target;
     let currentColorIdx = this.state.currentColorIdx;
+
     const headerColor =
-      currentColorIdx === headerColorsArr.length - 1 ? 0 : currentColorIdx++;
+       currentColorIdx === headerColorsArr.length - 1 ? 0 : currentColorIdx + 1;
+       
+    this.setState({ currentColorIdx: headerColor });
+
     headerEl.style.color = headerColorsArr[headerColor];
-    this.setState({
-      currentColorIdx
-    });
   }
 }
 
