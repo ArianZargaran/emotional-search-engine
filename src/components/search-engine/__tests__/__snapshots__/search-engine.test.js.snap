@@ -7,7 +7,7 @@ exports[`renders SearchEngine correctly 1`] = `
   <div
     className="ese-search-engine"
   >
-    <Connect(SearchForm) />
+    <SearchFormWrapper />
   </div>
 </div>
 `;

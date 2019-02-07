@@ -6,6 +6,6 @@ exports[`renders Body correctly 1`] = `
     Emotional Search Engine
   </MainHeader>
   <searchEngine />
-  <Connect(ResultsSection) />
+  <ResultsSectionWrapper />
 </div>
 `;
