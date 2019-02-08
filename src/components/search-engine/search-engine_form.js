@@ -1,14 +1,21 @@
 import React from "react";
-import { connect } from "react-redux";
-import {
-  searchQuery,
-  clearSearchForm
-} from "state/results/action-creators";
+import PropTypes from "prop-types";
+import { AppConsumer } from "context";
 import { emptyString } from "../../utils/search_strings";
 
 import SearchEngineMicro from "./search-engine_micro";
 
 import "styles/search-engine_form.css";
+
+export default function SearchFormWrapper(props) {
+  return (
+    <AppConsumer>
+      {context => (
+        <SearchForm {...props} ctxtProps={context} />
+      )}
+    </AppConsumer>
+  );
+};
 
 class SearchForm extends React.Component {
   constructor(props) {
@@ -26,62 +33,47 @@ class SearchForm extends React.Component {
     const { term } = this.state;
 
     return (
-      <form
-        onSubmit={this.handleSubmit}
+        <form
+        onSubmit={(ev) => this.handleSubmit(ev)}
         action="#"
         className="ese-search-engine_form"
-      >
-        <input
-          type="text"
-          value={term}
-          onChange={this.onInputChange}
-          className="ese-search-engine_field"
-          placeholder="Search..."
-          autoFocus
-        />
-        <SearchEngineMicro />
-        <input className="ese-search-engine_submit" type="submit" value="" />
-      </form>
+        >
+          <input
+            type="text"
+            value={term}
+            onChange={(ev) => this.onInputChange(ev)}
+            className="ese-search-engine_field"
+            placeholder="Search..."
+            autoFocus
+            />
+          <SearchEngineMicro />
+          <input className="ese-search-engine_submit" type="submit" value="" />
+        </form>
     );
   }
 
   onInputChange(ev) {
     const term = ev.target.value;
-    const { clearSearchForm } = this.props;
-
-    if (!term) {
-      clearSearchForm();
-    }
-
+    
     this.setState({
       term: term
     });
   }
-
+  
   handleSubmit(ev) {
-    const { searchQuery } = this.props;
+    const { searchQuery, clearSearchForm } = this.props.ctxtProps;
     const searchTerm = this.state.term;
-
+    
     ev.preventDefault();
 
-    if (!searchTerm.match(emptyString)) searchQuery(searchTerm);
+    if (!searchTerm.match(emptyString)) searchQuery(searchTerm)
+    else {
+      clearSearchForm();
+    };
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    query: state.query
-  };
+SearchForm.propTypes = {
+  searchQuery: PropTypes.func,
+  clearSearchForm: PropTypes.func
 };
-
-const mapDispatchToProps = (dispatch, props) => {
-  return {
-    searchQuery: state => dispatch(searchQuery(state)),
-    clearSearchForm: state => dispatch(clearSearchForm())
-  };
-};
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(SearchForm);
