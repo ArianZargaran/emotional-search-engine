@@ -1,12 +1,12 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import AppProvider from "./context";
+import { Provider } from "state/store";
 
 import Body from "./components/body";
 
 ReactDOM.render(
-  <AppProvider>
+  <Provider>
     <Body />
-  </AppProvider>,
+  </Provider>,
   document.getElementById("root")
 );
