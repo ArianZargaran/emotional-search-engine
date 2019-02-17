@@ -10,22 +10,23 @@ export default function ResultsSection() {
   const { state } = useContext(Store);
   const { results = [] } = state;
 
-  if(!results) {
-    return (
-      <h1 className="search-result">
-        <p className="search-result_title">Start Searching!</p>
-      </h1>
-    );
-  }
+  const renderNoResults = () => (
+    <h1 className="search-result">
+      <p className="search-result_title">Start Searching!</p>
+    </h1>
+  );
+
+  const renderResults = () => (
+    <ul>
+    { results.map((res, idx) => <SearchResult key={idx}>{res}</SearchResult>) }
+    </ul>
+  );
 
   return (
     <section className="ese-results-section">
-      <ul>
-      { results.map((res, idx) => <SearchResult key={idx}>{res}</SearchResult>) }
-      </ul>
+      { results ? renderResults() : renderNoResults() }
     </section>
   );
-
 }
 
 ResultsSection.propTypes = {
