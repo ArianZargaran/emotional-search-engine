@@ -1,74 +1,49 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
-import { AppConsumer } from "context";
+import { Store } from "state/store";
+import { searchQuery, clearSearchForm } from "../../state/results/action-creators";
 import { emptyString } from "../../utils/search_strings";
 
 import SearchEngineMicro from "./search-engine_micro";
 
 import "styles/search-engine_form.css";
 
-export default function SearchFormWrapper(props) {
+export default function SearchForm() {
+  const [ term, setTerm ] = useState("");
+  const { dispatch } = useContext(Store);
+
   return (
-    <AppConsumer>
-      {context => (
-        <SearchForm {...props} ctxtProps={context} />
-      )}
-    </AppConsumer>
+      <form
+      onSubmit={handleSubmit}
+      action="#"
+      className="ese-search-engine_form"
+      >
+        <input
+          type="text"
+          value={term}
+          onChange={(ev) => onInputChange(ev)}
+          className="ese-search-engine_field"
+          placeholder="Search..."
+          autoFocus
+        />
+        <SearchEngineMicro />
+        <input className="ese-search-engine_submit" type="submit" value="" />
+      </form>
   );
-};
 
-class SearchForm extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      term: ""
-    };
-
-    this.onInputChange = this.onInputChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  render() {
-    const { term } = this.state;
-
-    return (
-        <form
-        onSubmit={(ev) => this.handleSubmit(ev)}
-        action="#"
-        className="ese-search-engine_form"
-        >
-          <input
-            type="text"
-            value={term}
-            onChange={(ev) => this.onInputChange(ev)}
-            className="ese-search-engine_field"
-            placeholder="Search..."
-            autoFocus
-            />
-          <SearchEngineMicro />
-          <input className="ese-search-engine_submit" type="submit" value="" />
-        </form>
-    );
-  }
-
-  onInputChange(ev) {
+  function onInputChange(ev) {
     const term = ev.target.value;
-    
-    this.setState({
-      term: term
-    });
+
+    setTerm(term);
   }
   
-  handleSubmit(ev) {
-    const { searchQuery, clearSearchForm } = this.props.ctxtProps;
-    const searchTerm = this.state.term;
-    
+  function handleSubmit(ev) {
     ev.preventDefault();
 
-    if (!searchTerm.match(emptyString)) searchQuery(searchTerm)
-    else {
-      clearSearchForm();
+    if (term.match(emptyString)) {
+      dispatch(clearSearchForm());
+    } else { 
+      dispatch(searchQuery(term)); 
     };
   }
 }

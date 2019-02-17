@@ -1,25 +1,15 @@
-import React from "react";
-import { AppConsumer } from "context";
+import React, { useContext } from "react";
+import { Store } from "../../state/store";
 import PropTypes from "prop-types";
 
 import SearchResult from "./search-result";
 
 import "styles/results-section.css";
 
-export default function ResultsSectionWrapper(props) {
-  return (
-    <AppConsumer>
-      {context => (
-        <ResultsSection {...props} ctxtProps={context}/>
-      )}
-    </AppConsumer>
-  );
-}
+export default function ResultsSection() {
+  const { state } = useContext(Store);
+  const { results = [] } = state;
 
-class ResultsSection extends React.Component {
-  renderList() {
-    const { results } = this.props.ctxtProps;
-          
   if(!results) {
     return (
       <h1 className="search-result">
@@ -27,19 +17,15 @@ class ResultsSection extends React.Component {
       </h1>
     );
   }
-  
-  return results.map((res, idx) => (
-    <SearchResult key={idx}>{res}</SearchResult>
-    ));
-  }
 
-  render() {
-    return (
-      <section className="ese-results-section">
-        <ul>{this.renderList()}</ul>
-      </section>
-    );
-  }
+  return (
+    <section className="ese-results-section">
+      <ul>
+      { results.map((res, idx) => <SearchResult key={idx}>{res}</SearchResult>) }
+      </ul>
+    </section>
+  );
+
 }
 
 ResultsSection.propTypes = {
