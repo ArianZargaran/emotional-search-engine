@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react";
 import PropTypes from "prop-types";
 import { Store } from "state/store";
-import { searchQuery, clearSearchForm } from "../../state/results/action-creators";
+import { fetchResults, clearResults } from "../../state/results/results-action-creators";
 import { emptyString } from "../../utils/search_strings";
 
 import SearchEngineMicro from "./search-engine_micro";
@@ -41,14 +41,14 @@ export default function SearchForm() {
     ev.preventDefault();
 
     if (term.match(emptyString)) {
-      dispatch(clearSearchForm());
+      dispatch(clearResults());
     } else { 
-      dispatch(searchQuery(term)); 
+      dispatch(fetchResults(term)); 
     };
   }
 }
 
 SearchForm.propTypes = {
-  searchQuery: PropTypes.func,
-  clearSearchForm: PropTypes.func
+  fetchResults: PropTypes.func,
+  clearResults: PropTypes.func
 };

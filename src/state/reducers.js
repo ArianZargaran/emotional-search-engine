@@ -1,4 +1,5 @@
-import results from "./results/result-reducer";
+import results from "./results/results-reducer";
+import searchHistory from "./search-history/search-history-reducer";
 
 export const combineReducers = (reducers) => {
   return (state = {}, action) => {
@@ -16,6 +17,7 @@ export const combineReducers = (reducers) => {
 };
 
 export default combineReducers({
-  results
+  results,
+  searchHistory
 });
 
