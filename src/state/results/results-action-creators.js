@@ -1,12 +1,12 @@
-export const FETCH_RESULTS = "FETCH_RESULTS";
-export const CLEAR_RESULTS = "CLEAR_RESULTS"
+export const GET_RESULTS = "GET_RESULTS";
+export const CLEAR_RESULTS = "CLEAR_RESULTS";
 
-export function fetchResults(searchQuery) {	
+export function getResults(fetchedResults) {	
   return {	
-    type: FETCH_RESULTS,	
-    payload: searchQuery	
+    type: GET_RESULTS,	
+    payload: fetchedResults	
   };	
-}	
+}
 
 export function clearResults() {	
   return {

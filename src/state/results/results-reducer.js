@@ -1,10 +1,8 @@
-import fetchResults from "utils/fetch-results-bing-promise";
-
-import { FETCH_RESULTS, CLEAR_RESULTS } from "./results-action-creators";
+import { GET_RESULTS, CLEAR_RESULTS } from "./results-action-creators";
 
 export default (state, action) => {
   var mapActions = {
-    [FETCH_RESULTS]: () => fetchResults(action.payload),
+    [GET_RESULTS]: () => action.payload,
     [CLEAR_RESULTS]: () => null,
     DEFAULT: () => state
   };
