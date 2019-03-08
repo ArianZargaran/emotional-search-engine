@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import "styles/search-result.css";
 
-const searchResult = ({ children }) => {
+export function searchResult({ children }) {
   return (
     <li className="search-result">
       <h1 className="search-result_title">{children.title}</h1>
@@ -27,4 +27,4 @@ searchResult.propTypes = {
   children: PropTypes.object
 }
 
-export default searchResult;
+export default React.memo(searchResult);
