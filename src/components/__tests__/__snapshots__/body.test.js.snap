@@ -2,9 +2,9 @@
 
 exports[`renders Body correctly 1`] = `
 <div>
-  <MainHeader>
+  <UNDEFINED>
     Emotional Search Engine
-  </MainHeader>
+  </UNDEFINED>
   <searchEngine />
   <ResultsSection />
 </div>

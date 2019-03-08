@@ -4,6 +4,11 @@ exports[`renders MainHeader correctly 1`] = `
 <h1
   className="ese-main-header"
   onMouseOver={[Function]}
+  style={
+    Object {
+      "color": "#4688F1",
+    }
+  }
 >
   Here goes a title
 </h1>
