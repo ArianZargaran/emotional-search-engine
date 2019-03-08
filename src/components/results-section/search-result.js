@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 
 import "styles/search-result.css";
 
-export function searchResult({ children }) {
+export function SearchResult({ children }) {
   return (
     <li className="search-result">
       <h1 className="search-result_title">{children.title}</h1>
@@ -14,7 +14,7 @@ export function searchResult({ children }) {
   );
 };
 
-searchResult.defaultProps = {
+SearchResult.defaultProps = {
   children: {
     title: "No title was found",
     url: "This Site has no URL",
@@ -23,8 +23,8 @@ searchResult.defaultProps = {
   }
 }
 
-searchResult.propTypes = {
+SearchResult.propTypes = {
   children: PropTypes.object
 }
 
-export default React.memo(searchResult);
+export default React.memo(SearchResult);
