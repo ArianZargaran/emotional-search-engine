@@ -5,12 +5,12 @@ import headerColorsArr from "utils/header-colors-array";
 import "styles/main-header.css";
 
 export function MainHeader({ children }) {    
-  const [ colorIdx , setColorIdx ] = useState(0);
+  const [ colorIdx , setColorIdx ] = useState(1);
   const [ headerColor , setHeaderColor ] = useState(headerColorsArr[0]);
 
   const changeHeaderColor = () => {    
     setColorIdx(currentColorIdx => {
-      return currentColorIdx === headerColorsArr.length - 1 ? 0 : currentColorIdx + 1
+      return currentColorIdx === headerColorsArr.length - 1 ? 0 : currentColorIdx + 1;
     });
     setHeaderColor(headerColorsArr[colorIdx]);
   };
