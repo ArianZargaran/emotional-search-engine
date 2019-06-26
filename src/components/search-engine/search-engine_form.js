@@ -47,7 +47,7 @@ export default function SearchForm() {
     } else {
       fetchResults(term).then(
         response => {
-          if (response.status === 200) {
+          if (response && response.status === 200) {
             const fetchedResults = get(response.data.webPages, "value")
             .map(result => ({
               title: result.name,
@@ -68,7 +68,7 @@ export default function SearchForm() {
 
           } else {
             //TODO: render something when console Errors out because Bing doesn't serve any result for that particular query
-            throw new Error(response.status);
+            throw new Error(response && response.status);
           };
         },
         error => {
