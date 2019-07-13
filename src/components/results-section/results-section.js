@@ -25,7 +25,7 @@ export default function ResultsSection() {
   const renderAlert = () => (
     <div className="ese-alert-danger">
       <p>
-        <strong className="ese-alert-type">Error: </strong>There was an problem on our side trying to fetch results
+        <strong className="ese-alert-type">Error: </strong>There was an problem on our end trying to fetch results
       </p>
     </div>
   );
