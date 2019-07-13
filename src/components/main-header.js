@@ -1,29 +1,23 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+import headerColorsArr from "utils/header-colors-array";
 
 import "styles/main-header.css";
 
-const headerColorsArr = [ 
-  "#4688F1",
-  "#E7453C",
-  "#F9BB2D",
-  "#4688F1",
-  "#3AA757",
-  "#E7453C"
-];
-
 export function MainHeader({ children }) {    
-  const [ colorIdx , setColorIdx ] = useState(0);
+  const [ colorIdx , setColorIdx ] = useState(1);
+  const [ headerColor , setHeaderColor ] = useState(headerColorsArr[0]);
 
-  function changeHeaderColor(ev) {
-    const headerEl = ev.target;
-    
-    setColorIdx(currentColorIdx => currentColorIdx === headerColorsArr.length - 1 ? 0 : currentColorIdx + 1);
-    headerEl.style.color = headerColorsArr[colorIdx];
+  const changeHeaderColor = () => {    
+    setColorIdx(currentColorIdx => {
+      return currentColorIdx === headerColorsArr.length - 1 ? 0 : currentColorIdx + 1;
+    });
+    setHeaderColor(headerColorsArr[colorIdx]);
   };
 
   return ( 
-    <h1 
+    <h1
+      style={{"color": headerColor}}
       className="ese-main-header"
       onMouseOver={changeHeaderColor}
     >

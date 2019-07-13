@@ -14,6 +14,6 @@ const render = () => {
 };
 
 window.onload = () => {
-  //Avoids FUOC - "flash of unstyled text"
+  //Avoids FUOC - "flash of unstyled content"
 	render();
 };

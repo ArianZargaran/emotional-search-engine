@@ -3,7 +3,7 @@ export const CLEAR_RESULTS = "CLEAR_RESULTS";
 
 export function getResults(fetchedResults) {	
   return {	
-    type: GET_RESULTS,	
+    type: GET_RESULTS,
     payload: fetchedResults	
   };	
 }

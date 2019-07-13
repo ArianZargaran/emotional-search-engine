@@ -9,7 +9,7 @@ import "styles/body.css";
 
 export default function Body() {
   return (
-    <div>
+    <div className="body-wrapper">
       <MainHeader>Emotional Search Engine</MainHeader>
       <SearchEngine />
       <ResultsSection />
