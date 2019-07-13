@@ -12,7 +12,7 @@ import "styles/search-engine_form.css";
 
 export default function SearchForm() {
   const [ term, setTerm ] = useState("");
-  const { dispatch, state } = useContext(Store);
+  const { dispatch } = useContext(Store);
 
   return (
       <form
@@ -59,22 +59,13 @@ export default function SearchForm() {
             dispatch(getResults(fetchedResults))
             dispatch(saveSearchResults(fetchedResults));
 
-            // TODO: Discover why I update the state right above ^HERE^ (line 59 & 60)
-            // but the console (lines 64-67) goes one step behind?
-            console.log(
-              "state=====>",
-              state
-            );
-
           } else {
-            //TODO: render something when console Errors out because Bing doesn't serve any result for that particular query
+            //TODO: render alert when console Errors out because Bing doesn't serve any result for that particular query
+            console.error("There was an error on our end trying to fetch data")
             throw new Error(response && response.status);
           };
         },
-        error => {
-          //TODO: render something when there's an error because of a problem fetching data with Bing Search API
-          console.log("Error fetching data:" + error);
-        }
+        error => { console.error(error); }
       )
     };
   }

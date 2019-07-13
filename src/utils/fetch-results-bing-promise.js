@@ -3,7 +3,7 @@ const CancelToken = axios.CancelToken;
 const source = CancelToken.source();
 
 export default (query) => {
-  const BING_KEY = "ebb6e51fc4324eb49a6d29b86c4d9062";
+  const BING_KEY = "6251fd46d658473888b5917088ea5332";
   const endpoint = "https://api.cognitive.microsoft.com/bing/v7.0/search";
   // if options, add them to the end of queryurl
   // const options = {};
@@ -22,10 +22,9 @@ export default (query) => {
 
   return searchRequest.get().catch((thrown) => {
     if (axios.isCancel(thrown)) {
-      console.log('Request canceled', thrown.message);
+      console.log('Request canceled:', thrown.message);
     } else {
-      // handle error
-      console.log('Error');
+      console.error('There was an error trying to fetch data');
     }
   });
 };
@@ -33,3 +32,5 @@ export default (query) => {
 // TODO: .catch((thrown) => {
 // Configure ^^^ cancel request when user attempts several searches in a row.
 // Resolution: Should proceed just with the last one.
+
+// This util returns a promise, handled by search-engine-form onSubmit
