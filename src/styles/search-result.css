@@ -1,40 +1,45 @@
-.search-result {
-  padding: 10px;
+.ese-results_section_wrapper {
   margin: 0 auto;
 }
+
 @media screen and (min-width: 695.01px) {
-  .search-result {
+  .ese-results_section_wrapper {
     width: 496px;
   }
 }
+
 @media screen and (min-width: 864.01px) {
-  .search-result {
+  .ese-results_section_wrapper {
     width: 666px;
   }
 }
 
-.search-result_title {
+.ese-search-result {
+  margin: 7px 0 14px;
+}
+
+.ese-search-result_title {
   color: #1a0dab;
   font-weight: 400;
   font-size: 18px;
   line-height: 22px;
 }
 
-.search-result_url {
+.ese-search-result_url {
   color: #006621;
   font-weight: 400;
   font-size: 14px;
   line-height: 16px;
 }
 
-.search-result_description {
+.ese-search-result_description {
   color: #545454;
   font-weight: 400;
   font-size: 13px;
   line-height: 18px;
 }
 
-.search-result_emotion {
+.ese-search-result_emotion {
   padding: 5px 0;
   font-size: 15px;
 }

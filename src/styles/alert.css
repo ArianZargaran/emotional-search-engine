@@ -1,0 +1,12 @@
+.ese-alert-danger {
+  padding: 12px 10px;
+  margin: 10px 0;
+  background: #f2dede;
+  color: #a94442;
+  border: .5px solid #ebccd1;
+  font-weight: 100;
+}
+
+.ese-alert-type {
+  font-weight: 900;
+}

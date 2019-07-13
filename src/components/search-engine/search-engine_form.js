@@ -3,10 +3,11 @@ import get from "lodash/get";
 import { Store } from "state/store";
 import { clearResults, getResults } from "state/results/results-action-creators";
 import { saveSearchResults } from "state/search-history/search-history-action-creators";
+import { showFetchResultsAlert } from "state/alert/alert-action-creators"; 
 import fetchResults from "utils/fetch-results-bing-promise";
 import { emptyString } from "utils/search_strings";
 
-// import SearchEngineMicro from "./search-engine_micro";
+import SearchEngineMicro from "./search-engine_micro";
 
 import "styles/search-engine_form.css";
 
@@ -28,7 +29,7 @@ export default function SearchForm() {
           placeholder="Search..."
           autoFocus
         />
-        {/* <SearchEngineMicro /> */}
+        <SearchEngineMicro />
         <input className="ese-search-engine_submit" type="submit" value="" />
       </form>
   );
@@ -43,6 +44,7 @@ export default function SearchForm() {
     ev.preventDefault();
 
     if (term.match(emptyString)) {
+      // clear previous results if any when user submits blank
       dispatch(clearResults());
     } else {
       fetchResults(term).then(
@@ -55,13 +57,25 @@ export default function SearchForm() {
               description: result.snippet,
               emotion: "😒 10% | 😃 50% | 😱 35% | 🙈 5% | 😡 0%"
             }));
-      
-            dispatch(getResults(fetchedResults))
+
+            // remove previous alert if any
+            dispatch(showFetchResultsAlert(false));
+
+            // trigger query search
+            dispatch(getResults(fetchedResults));
+
+            // save results in state history
             dispatch(saveSearchResults(fetchedResults));
 
           } else {
-            //TODO: render alert when console Errors out because Bing doesn't serve any result for that particular query
-            console.error("There was an error on our end trying to fetch data")
+            
+            // display alert
+            dispatch(showFetchResultsAlert(true));
+
+            // console error
+            console.error("There was an error on our end trying to fetch data");
+
+            // throw internal error
             throw new Error(response && response.status);
           };
         },
