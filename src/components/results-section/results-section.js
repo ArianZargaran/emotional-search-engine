@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
-import { Store } from "../../state/store";
-import PropTypes from "prop-types";
+import { Store } from "state/store";
 
 import SearchResult from "./search-result";
 
@@ -27,8 +26,4 @@ export default function ResultsSection() {
       { results ? renderResults() : renderNoResults() }
     </section>
   );
-}
-
-ResultsSection.propTypes = {
-  results: PropTypes.array
-}
+};

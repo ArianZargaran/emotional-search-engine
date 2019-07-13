@@ -1,5 +1,5 @@
 import React from 'react';
-import MainHeader from "../main-header";
+import { MainHeader } from "../main-header";
 
 it('renders MainHeader correctly', () => {
   const renderer = new ShallowRenderer();

@@ -4,9 +4,16 @@ import { Provider } from "state/store";
 
 import Body from "./components/body";
 
-ReactDOM.render(
-  <Provider>
-    <Body />
-  </Provider>,
-  document.getElementById("root")
-);
+const render = () => {
+  ReactDOM.render(
+    <Provider>
+      <Body />
+    </Provider>,
+    document.getElementById("root")
+  );
+};
+
+window.onload = () => {
+  //Avoids FUOC - "flash of unstyled text"
+	render();
+};

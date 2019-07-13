@@ -1,5 +1,5 @@
 import React from "react";
-import SearchResult from "../search-result";
+import { SearchResult } from "../search-result";
 
 it('renders SearchResult correctly', () => {
   const renderer = new ShallowRenderer();

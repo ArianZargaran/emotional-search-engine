@@ -12,7 +12,7 @@ const headerColorsArr = [
   "#E7453C"
 ];
 
-export default function MainHeader({ children }) {    
+export function MainHeader({ children }) {    
   const [ colorIdx , setColorIdx ] = useState(0);
 
   function changeHeaderColor(ev) {
@@ -39,3 +39,5 @@ MainHeader.propTypes = {
 MainHeader.defaultProps = {
   children: "Here goes a title"
 };
+
+export default React.memo(MainHeader);
