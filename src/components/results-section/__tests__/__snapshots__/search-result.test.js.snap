@@ -2,23 +2,28 @@
 
 exports[`renders SearchResult correctly 1`] = `
 <li
-  className="search-result"
+  className="ese-search-result"
 >
   <h1
-    className="search-result_title"
+    className="ese-search-result_title"
   >
     No title was found
   </h1>
   <a
-    className="search-result_url"
+    className="ese-search-result_url"
     href="This Site has no URL"
   >
     This Site has no URL
   </a>
   <p
-    className="search-result_description"
+    className="ese-search-result_description"
   >
     No description available
+  </p>
+  <p
+    className="ese-search-result_emotion"
+  >
+    No emotions detected
   </p>
 </li>
 `;
