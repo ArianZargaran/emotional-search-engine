@@ -5,11 +5,11 @@ import "styles/search-result.css";
 
 export function SearchResult({ children }) {
   return (
-    <li className="search-result">
-      <h1 className="search-result_title">{children.title}</h1>
-      <a href={children.url} className="search-result_url">{children.url}</a>
-      <p className="search-result_description">{children.description}</p>
-      {/* <p className='search-result_emotion'>{children.emotion}</p> */}
+    <li className="ese-search-result">
+      <h1 className="ese-search-result_title">{children.title}</h1>
+      <a href={children.url} className="ese-search-result_url">{children.url}</a>
+      <p className="ese-search-result_description">{children.description}</p>
+      <p className="ese-search-result_emotion">{children.emotion}</p>
     </li>
   );
 };

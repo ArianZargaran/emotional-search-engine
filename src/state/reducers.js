@@ -1,5 +1,6 @@
 import results from "./results/results-reducer";
 import searchHistory from "./search-history/search-history-reducer";
+import alert from "./alert/alert-reducer";
 
 export const combineReducers = (reducers) => {
   return (state = {}, action) => {
@@ -18,6 +19,7 @@ export const combineReducers = (reducers) => {
 
 export default combineReducers({
   results,
-  searchHistory
+  searchHistory,
+  alert
 });
 
